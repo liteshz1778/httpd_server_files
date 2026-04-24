@@ -4,7 +4,7 @@
 sudo cp -rf * /var/www/html
 
 # Generate HTML
-cat <<EOF > /var/www/html/script_output/index.html
+sudo cat <<EOF > /var/www/html/script_output/index.html
 <html>
 <body>
 <h2>Deployment Info</h2>
