@@ -1,6 +1,5 @@
 # This repo contains dummy files for httpd server
 
-
-Update visudo with --> 
+Points to remember:
 a. usermod -aG sudo jenkins
-b. jenkins ALL=(ALL) NOPASSWD: ALL
+b. Update visudo with -->  jenkins ALL=(ALL) NOPASSWD: ALL
