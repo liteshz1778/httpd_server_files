@@ -1,19 +1,20 @@
-# accessing User-Defined ENV Variables
-echo "Hi, this is  {Name} &  work as {Work}"
+#!/bin/bash
 
-echo -e "\n"
+OUTPUT_FILE="./script_output/index.html"
 
-# Copy files to /var/www/html directory
-sudo cp -rf * /var/www/html
-# Not used -v flag for verbose
+{
+echo "<html><body>"
 
-echo -e "\n"
+echo "<h2>Deployment Info</h2>"
 
-# accessing server
-echo "Code deployed on $(hostname -i) server"
+echo "<p>Hi, this is $Name & work as $Work</p>"
+echo "<br>"
 
-echo -e "\n"
+echo "<p>Code deployed on $(hostname -i) server</p>"
+echo "<br>"
 
-# accessing built-in ENV Variables
-echo "Job Name: $JOB_NAME" 
-echo "Build ID: $BUILD_ID"
+echo "<p>Job Name: $JOB_NAME</p>"
+echo "<p>Build ID: $BUILD_ID</p>"
+
+echo "</body></html>"
+} > "$OUTPUT_FILE"
