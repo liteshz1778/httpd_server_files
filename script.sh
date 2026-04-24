@@ -1,20 +1,22 @@
 #!/bin/bash
 
-OUTPUT_FILE="./script_output/index.html"
+# Copy files first
+sudo cp -rf * /var/www/html
 
-{
-echo "<html><body>"
+# Generate HTML
+cat <<EOF > /var/www/html/index.html
+<html>
+<body>
 
-echo "<h2>Deployment Info</h2>"
+<h2>Deployment Info</h2>
 
-echo "<p>Hi, this is $Name & work as $Work</p>"
-echo "<br>"
+<p>Hi, this is $Name & work as $Work</p>
 
-echo "<p>Code deployed on $(hostname -i) server</p>"
-echo "<br>"
+<p>Code deployed on $(hostname -i) server</p>
 
-echo "<p>Job Name: $JOB_NAME</p>"
-echo "<p>Build ID: $BUILD_ID</p>"
+<p>Job Name: $JOB_NAME</p>
+<p>Build ID: $BUILD_ID</p>
 
-echo "</body></html>"
-} > "$OUTPUT_FILE"
+</body>
+</html>
+EOF
