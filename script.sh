@@ -1,2 +1,2 @@
-cp -rvf * /var/www/html
+sudo cp -rvf * /var/www/html
 echo "Code deployed on $(hostname -i) server"
