@@ -1,9 +1,11 @@
 #!/bin/bash
 
-touch ./script_output/index.html
+# Copy files first
+sudo cp -rf * /var/www/html
+sudo chmod 777 /var/www/html/script_output/index.html
 
-# Generate HTML 
-cat <<EOF > ./script_output/index.html
+# Generate HTML
+sudo cat <<EOF > /var/www/html/script_output/index.html
 <html>
 <body style="background-color: #e6ffe6;">
 <h2>Deployment Info</h2>
