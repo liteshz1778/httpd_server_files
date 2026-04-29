@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: httpd-server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpd-server
+  template:
+    metadata:
+      name: httpd-server-pod
+      labels:
+        app: httpd-server
+    spec:
+      containers:
+        - name: httpd-server-container
+          image: liteshz/httpd_server_files:v4
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd-server-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: httpd-server
+  ports:
+    - name: http
+      port: 9090
+      targetPort: 80
