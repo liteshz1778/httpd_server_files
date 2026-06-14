@@ -1,0 +1,22 @@
+<html>
+<body>
+    <h1>Application is running successfully!!</h1>
+
+    <h3>
+        Current Date & Time:
+        <span id="datetime"></span>
+    </h3>
+
+    <script>
+        function showDateTime() {
+            const now = new Date();
+
+            document.getElementById("datetime").innerHTML =
+                now.toLocaleString();
+        }
+
+        showDateTime();
+    </script>
+
+</body>
+</html>
